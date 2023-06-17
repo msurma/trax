@@ -40,8 +40,8 @@ RUN chmod -R 777 /var/www/trax/var/cache /var/www/trax/var/log
 # Install node.js
 RUN echo "NODE_ENV=development" >> /etc/environment
 RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-#RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash
+# RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
 RUN apt-get install -y nodejs
 
 # Install vendor.
