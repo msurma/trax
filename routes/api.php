@@ -29,6 +29,12 @@ Route::get('/user', function (Request $request) {
 
 // Mock endpoint to get all cars for the logged in user
 
+Route::middleware('auth:api')->group(function () {
+    Route::apiResource('cars', App\Http\Controllers\CarController::class);
+    Route::apiResource('trips', App\Http\Controllers\TripController::class);
+});
+
+
 Route::get('/mock-get-cars', function(Request $request) {
     return [
         'data' => [
